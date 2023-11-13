@@ -24,6 +24,8 @@ public class CadastroActivity extends AppCompatActivity {
     //componentes visuais
     EditText edtNomeProfissional;
     EditText edtCRPProfissional;
+    EditText edtFormacaoProfissional;
+    EditText edtNasctProfissional;
 
     ListView listaP;
 
@@ -34,6 +36,8 @@ public class CadastroActivity extends AppCompatActivity {
         setContentView(R.layout.activity_cadastro);
         edtNomeProfissional = findViewById(R.id.edtNomeProfissional);
         edtCRPProfissional = findViewById(R.id.edtCRPProfissional);
+        edtFormacaoProfissional = findViewById(R.id.edtFormacaoProfissional);
+        edtNasctProfissional = findViewById(R.id.edtNasctProfissional);
         listaP = findViewById(R.id.listaP);
     }
 
@@ -41,6 +45,8 @@ public class CadastroActivity extends AppCompatActivity {
         try {
             this.profissional.nome = "" + edtNomeProfissional.getText();
             this.profissional.crp = Long.parseLong("" + edtCRPProfissional.getText());
+            this.profissional.formacao = "" + edtFormacaoProfissional.getText();
+            this.profissional.nasct = "" + edtNasctProfissional.getText();
             if (this.profissional.id == null) {
                 BaseDados.rProfissional.insert(this.profissional);
             } else {
@@ -66,6 +72,8 @@ public class CadastroActivity extends AppCompatActivity {
                 edtCRPProfissional.setText("" + profissional.crp);
                 edtNomeProfissional.setText(profissional.nome);
                 edtNomeProfissional.requestFocus();
+                edtFormacaoProfissional.setText("" + profissional.formacao);
+                edtNasctProfissional.setText("" + profissional.nasct);
             }
         });
     }
@@ -82,6 +90,8 @@ public class CadastroActivity extends AppCompatActivity {
         edtNomeProfissional.setText("");
         edtCRPProfissional.setText("");
         edtNomeProfissional.requestFocus();
+        edtFormacaoProfissional.setText("");
+        edtNasctProfissional.setText("");
         getListaProfissionais();
     }
 

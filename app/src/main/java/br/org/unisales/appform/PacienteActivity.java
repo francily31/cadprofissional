@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import br.org.unisales.appform.clinica.Paciente;
+
 public class PacienteActivity extends AppCompatActivity {
 
     @Override

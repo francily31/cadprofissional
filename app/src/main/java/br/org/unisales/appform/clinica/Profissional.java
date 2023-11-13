@@ -14,11 +14,13 @@ import java.util.Objects;
 })
 public class Profissional {
     //componentes da entidade
-   @Id
+    @Id
     public NitriteId id;//gera automatico
     public String nome;
     public Long crp;
-    
+    public String formacao;
+    public String nasct;
+
 
     @Override
     public String toString() {
