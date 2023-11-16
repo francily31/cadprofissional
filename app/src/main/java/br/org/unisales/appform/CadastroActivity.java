@@ -25,7 +25,9 @@ public class CadastroActivity extends AppCompatActivity {
     EditText edtNomeProfissional;
     EditText edtCRPProfissional;
     EditText edtFormacaoProfissional;
+    EditText edtEspecializacaoProfissional;
     EditText edtNasctProfissional;
+    EditText edtCPFProfissional;
 
     ListView listaP;
 
@@ -37,7 +39,9 @@ public class CadastroActivity extends AppCompatActivity {
         edtNomeProfissional = findViewById(R.id.edtNomeProfissional);
         edtCRPProfissional = findViewById(R.id.edtCRPProfissional);
         edtFormacaoProfissional = findViewById(R.id.edtFormacaoProfissional);
+        edtEspecializacaoProfissional = findViewById(R.id.edtEspecializacaoProfissional);
         edtNasctProfissional = findViewById(R.id.edtNasctProfissional);
+        edtCPFProfissional = findViewById(R.id.edtCPFProfissional);
         listaP = findViewById(R.id.listaP);
     }
 
@@ -46,7 +50,9 @@ public class CadastroActivity extends AppCompatActivity {
             this.profissional.nome = "" + edtNomeProfissional.getText();
             this.profissional.crp = Long.parseLong("" + edtCRPProfissional.getText());
             this.profissional.formacao = "" + edtFormacaoProfissional.getText();
+            this.profissional.especializacao = "" + edtEspecializacaoProfissional.getText();
             this.profissional.nasct = "" + edtNasctProfissional.getText();
+            this.profissional.cpf = "" + edtCPFProfissional.getText();
             if (this.profissional.id == null) {
                 BaseDados.rProfissional.insert(this.profissional);
             } else {
@@ -73,7 +79,9 @@ public class CadastroActivity extends AppCompatActivity {
                 edtNomeProfissional.setText(profissional.nome);
                 edtNomeProfissional.requestFocus();
                 edtFormacaoProfissional.setText("" + profissional.formacao);
+                edtEspecializacaoProfissional.setText("" + profissional.especializacao);
                 edtNasctProfissional.setText("" + profissional.nasct);
+                edtCPFProfissional.setText("" + profissional.cpf);
             }
         });
     }
@@ -91,7 +99,9 @@ public class CadastroActivity extends AppCompatActivity {
         edtCRPProfissional.setText("");
         edtNomeProfissional.requestFocus();
         edtFormacaoProfissional.setText("");
+        edtEspecializacaoProfissional.setText("");
         edtNasctProfissional.setText("");
+        edtCPFProfissional.setText("");
         getListaProfissionais();
     }
 

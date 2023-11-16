@@ -19,7 +19,9 @@ public class Profissional {
     public String nome;
     public Long crp;
     public String formacao;
+    public String especializacao;
     public String nasct;
+    public String cpf;
 
 
     @Override

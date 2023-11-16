@@ -18,12 +18,13 @@ public class Paciente {
 @Id
     public NitriteId id;
     public String nome;
+    public String cpf;
 
-    public Date dtnascimento;
+    //public Date dtnascimento;
 
-    public Number telefone;
+    //public Number telefone;
 
-    public String email;
+    //public String email;
 
     @Override
 
