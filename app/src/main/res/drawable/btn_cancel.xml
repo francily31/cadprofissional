@@ -1,0 +1,29 @@
+<!-- res/drawable/button_background.xml -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <!-- Estado quando pressionado -->
+    <item android:state_pressed="true">
+        <shape>
+            <!-- Cor de fundo quando pressionado -->
+            <solid android:color="@color/stateblue" />
+            <!-- Cantos arredondados -->
+            <corners android:radius="40dp" />
+            <!-- Adicionando uma borda para destacar o botão quando pressionado -->
+            <stroke
+                android:color="@color/blue"
+                android:width="2dp" />
+        </shape>
+    </item>
+
+    <!-- Estado padrão -->
+    <item>
+        <shape>
+            <!-- Cor de fundo padrão -->
+            <solid android:color="@color/white" />
+            <!-- Cantos arredondados -->
+            <stroke android:color="@color/blue" android:width="2dp"/>
+            <corners android:radius="40dp" />
+        </shape>
+    </item>
+</selector>
