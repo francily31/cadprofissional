@@ -18,7 +18,7 @@ import br.org.unisales.appform.persistencia.BaseDados;
 
 public class PacienteActivity extends AppCompatActivity {
 
-
+//começo
 
     //modelo
     Paciente paciente = new Paciente();
