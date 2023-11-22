@@ -13,7 +13,6 @@ import android.widget.ListView;
 import java.util.List;
 
 import br.org.unisales.appform.clinica.Paciente;
-import br.org.unisales.appform.clinica.Profissional;
 import br.org.unisales.appform.persistencia.BaseDados;
 
 public class PacienteActivity extends AppCompatActivity {
@@ -29,9 +28,7 @@ public class PacienteActivity extends AppCompatActivity {
     EditText edtTelefonePaciente;
     EditText edtEmailPaciente;
 
-    ListView listaP;
-    private Paciente profissional;
-
+    ListView listaM;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +39,7 @@ public class PacienteActivity extends AppCompatActivity {
         edtCPFPaciente = findViewById(R.id.edtCPFPaciente);
         edtTelefonePaciente = findViewById(R.id.edtTelefonePaciente);
         edtEmailPaciente = findViewById(R.id.edtEmailPaciente);
-        listaP = findViewById(R.id.listaP);
+        listaM = findViewById(R.id.listaM);
     }
 
     public void salvarPaciente(View view) {
@@ -52,7 +49,7 @@ public class PacienteActivity extends AppCompatActivity {
             this.paciente.telefone = "" +  edtTelefonePaciente.getText();
             this.paciente.email = "" + edtEmailPaciente.getText();
 
-            if (this.profissional.id == null) {
+            if (this.paciente.id == null) {
                 BaseDados.rPaciente.insert(this.paciente);
             } else {
                 BaseDados.rPaciente.update(this.paciente);
@@ -66,15 +63,12 @@ public class PacienteActivity extends AppCompatActivity {
         this.cancelarPaciente(view);
     }
 
-    private void cancelarPaciente(View view) {
-    }
-
 
     public void getListaPacientes() {
         List<Paciente> lista = BaseDados.rPaciente.find().toList();
         final ArrayAdapter<Paciente> arrayAdapter = new  ArrayAdapter<>(this, android.R.layout.simple_list_item_1, lista);
-        listaP.setAdapter(arrayAdapter);
-        listaP.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        listaM.setAdapter(arrayAdapter);
+        listaM.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 paciente = BaseDados.rPaciente.getById(arrayAdapter.getItem(i).id);
@@ -83,26 +77,24 @@ public class PacienteActivity extends AppCompatActivity {
                 edtNomePaciente.requestFocus();
                 edtTelefonePaciente.setText("" + paciente.telefone);
                 edtEmailPaciente.setText("" + paciente.email);
-
             }
         });
     }
-
-
 
     @Override
     protected void onResume() {
         super.onResume();
         getListaPacientes();
     }
-    public void cancelarPacientes(View view) {
+
+    public void cancelarPaciente(View view) {
         this.paciente = new Paciente();
         edtNomePaciente.setText("");
         edtCPFPaciente.setText("");
         edtNomePaciente.requestFocus();
         edtTelefonePaciente.setText("");
         edtEmailPaciente.setText("");
-
+        getListaPacientes();
     }
 
 
@@ -112,9 +104,5 @@ public class PacienteActivity extends AppCompatActivity {
             this.cancelarPaciente(view);
         }
     }
-
-
-
-
 
 }

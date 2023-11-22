@@ -22,7 +22,7 @@
 
     <LinearLayout
 
-        android:id="@+id/formularioLayout"
+        android:id="@+id/FormularioLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -106,7 +106,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/btn_cancel"
-                android:onClick="cancelarProfissional"
+                android:onClick="cancelarPaciente"
                 android:text="Cancelar"
 
                 />
@@ -116,7 +116,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/btn_save"
-                android:onClick="salvarProfissional"
+                android:onClick="salvarPaciente"
                 android:text="Salvar" />
 
             <androidx.appcompat.widget.AppCompatButton
@@ -124,16 +124,16 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/btn_delete"
-                android:onClick="excluirProfissional"
+                android:onClick="excluirPaciente"
                 android:text="Excluir" />
         </LinearLayout>
     </LinearLayout>
 
     <ListView
-        android:id="@+id/listaP"
+        android:id="@+id/listaM"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/formularioLayout"
+        android:layout_below="@id/FormularioLayout"
         android:layout_marginTop="8dp" />
 
 </RelativeLayout>

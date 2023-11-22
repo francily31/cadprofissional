@@ -2,7 +2,6 @@ package br.org.unisales.appform.persistencia;
 
 import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.objects.ObjectRepository;
-
 import br.org.unisales.appform.clinica.Paciente;
 import br.org.unisales.appform.clinica.Profissional;
 
