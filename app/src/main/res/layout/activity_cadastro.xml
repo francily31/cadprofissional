@@ -1,120 +1,173 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="@drawable/background"
+    android:padding="16dp"
     tools:context=".CadastroActivity">
 
+    <TextView
+        android:id="@+id/textCadastreSe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="Cadastre-se"
+        android:textSize="24sp"
+        android:textColor="#FFFFFF"
+        android:fontFamily="sans-serif-light"
+        android:layout_marginTop="16dp"/>
 
     <LinearLayout
+
+        android:id="@+id/FormularioLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nome:" />
-
-        <EditText
-            android:id="@+id/edtNomeProfissional"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-
-        <TextView
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="CRP:" />
+            android:layout_marginTop="60dp"
+            android:layout_marginBottom="8dp">
 
+            <EditText
+                android:id="@+id/edtNomeProfissional"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text"
+                android:drawableRight="@drawable/ic_name"
+                android:hint="Nome"
+                android:padding="10dp" />
 
-        <EditText
-            android:id="@+id/edtCRPProfissional"
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-
-        <TextView
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Formação acadêmica:" />
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
 
+            <EditText
+                android:id="@+id/edtCRPProfissional"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text"
+                android:drawableRight="@drawable/ic_cpf"
+                android:hint="CRP"
+                android:padding="10dp" />
 
-        <EditText
-            android:id="@+id/edtFormacaoProfissional"
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Especialização:" />
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
 
+            <EditText
+                android:id="@+id/edtFormacaoProfissional"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text"
+                android:drawableRight="@drawable/ic_diploma"
+                android:hint="Formação acadêmica"
+                android:padding="10dp" />
 
-        <EditText
-            android:id="@+id/edtEspecializacaoProfissional"
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Data de Nascimento:" />
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
 
+            <EditText
+                android:id="@+id/edtEspecializacaoProfissional"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text"
+                android:drawableRight="@drawable/ic_espec"
+                android:hint="Especialização"
+                android:padding="10dp" />
 
-        <EditText
-            android:id="@+id/edtNasctProfissional"
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="CPF:" />
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
 
+            <EditText
+                android:id="@+id/edtNasctProfissional"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text"
+                android:drawableRight="@drawable/ic_calendar"
+                android:hint="Data de nascimento"
+                android:padding="10dp" />
 
-        <EditText
-            android:id="@+id/edtCPFProfissional"
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp">
 
+            <EditText
+                android:id="@+id/edtCPFProfissional"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text"
+                android:drawableRight="@drawable/ic_cpf"
+                android:hint="CPF"
+                android:padding="10dp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:orientation="horizontal">
 
-
-            <Button
-                android:layout_width="wrap_content"
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/btn_cancel"
                 android:onClick="cancelarProfissional"
-                android:text="Cancelar" />
+                android:text="Cancelar"
 
+                />
 
-            <Button
-                android:layout_width="wrap_content"
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/btn_save"
                 android:onClick="salvarProfissional"
                 android:text="Salvar" />
 
-
-            <Button
-                android:layout_width="wrap_content"
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/btn_delete"
                 android:onClick="excluirProfissional"
                 android:text="Excluir" />
         </LinearLayout>
-
     </LinearLayout>
 
     <ListView
         android:id="@+id/listaP"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_below="@id/FormularioLayout"
+        android:layout_marginTop="8dp" />
 
-</LinearLayout>
-
+</RelativeLayout>
