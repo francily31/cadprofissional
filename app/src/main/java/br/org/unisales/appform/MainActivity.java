@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         //definicao do layout associado a esta atividade
         setContentView(R.layout.activity_main);
 
+
         //iniciacao (init) do banco de dados com o caminho do arquivo
         BaseDados.init(getFilesDir().getPath() + "/baseClinica.db");
     }
